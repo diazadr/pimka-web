@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-2">
+  <h1 class="mb-4">Tambah Program Studi</h1>
+  <form action="{{ url_for('form_program_studi') }}" method="post">
+    <div class="form-group">
+      <label for="inputProgramStudi">Program Studi</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputProgramStudi"
+        name="program_studi"
+        placeholder="Masukkan Program Studi"
+        required />
+    </div>
+    <button type="submit" class="btn btn-primary">Tambah Program Studi</button>
+  </form>
+</div>
+{% endblock %}

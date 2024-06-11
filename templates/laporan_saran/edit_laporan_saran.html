@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <h1 class="mb-4">Edit Laporan dan Saran</h1>
+  <form
+    action="{{ url_for('edit_laporan_saran', id=laporan._id) }}"
+    method="post">
+    <div class="mb-3">
+      <label for="laporan" class="form-label">Laporan</label>
+      <textarea
+        class="form-control"
+        id="laporan"
+        name="laporan"
+        rows="3"
+        required>
+{{ laporan.laporan }}</textarea
+      >
+    </div>
+    <div class="mb-3">
+      <label for="saran" class="form-label">Saran</label>
+      <textarea class="form-control" id="saran" name="saran" rows="3" required>
+{{ laporan.saran }}</textarea
+      >
+    </div>
+    <button type="submit" class="btn btn-primary">Simpan</button>
+  </form>
+</div>
+{% endblock %}

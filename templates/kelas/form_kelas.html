@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-2">
+  <h1 class="mb-4">Tambah Kelas</h1>
+  <form action="{{ url_for('form_kelas') }}" method="post">
+    <div class="form-group">
+      <label for="inputKelas">Kelas</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputKelas"
+        name="kelas"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="programStudi">Program Studi</label>
+      <select class="form-control" id="programStudi" name="program_studi_id">
+        <option value="">Pilih Program Studi</option>
+        {% for program in program_studi %}
+        <option value="{{ program._id }}">{{ program.program_studi }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Tambah Kelas</button>
+  </form>
+</div>
+{% endblock %}

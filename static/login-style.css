@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  flex: 1;
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Changed background color with opacity */
+}
+
+.card {
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better visibility */
+  background-color: #fff; /* Changed card background color */
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(70%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Added border for inputs */
+  border-radius: 5px; /* Added border-radius for inputs */
+  box-sizing: border-box; /* Ensured padding doesn't affect width */
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #669ccb;
+  color: #fff;
+  border: 1px solid #ccc; /* Added border to button for consistency */
+  border-radius: 5px; /* Added border-radius for button */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s; /* Added transition for background color */
+  box-sizing: border-box; /* Ensured padding doesn't affect width */
+}
+
+.button-learn-more {
+  color: #fff; /* Mengubah warna teks menjadi putih */
+}
+
+button:hover {
+  background-color: #5681a7;
+}
+
+.register-link {
+  margin-top: 20px;
+  text-align: center; /* Centered the text */
+}
+
+.register-link a {
+  color: #669ccb;
+  text-decoration: none; /* Removed underline from link */
+  transition: color 0.3s; /* Added transition for color */
+}
+
+.register-link a:hover {
+  color: #5681a7;
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-2">
+  <h1 class="mb-4">Tambah Shift</h1>
+  <form method="post">
+    <div class="form-group">
+      <label for="shift_type">Jenis Shift</label>
+      <input
+        type="text"
+        class="form-control"
+        id="jenis_shift"
+        name="jenis_shift"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="waktu_mulai">Waktu Mulai</label>
+      <input
+        type="time"
+        class="form-control"
+        id="waktu_mulai"
+        name="waktu_mulai"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="waktu_berakhir">Waktu Berakhir</label>
+      <input
+        type="time"
+        class="form-control"
+        id="waktu_berakhir"
+        name="waktu_berakhir"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="kelas_id">Kelas</label>
+      <select class="form-control" id="kelas_id" name="kelas_id" required>
+        {% for kelas in kelas_list %}
+        <option value="{{ kelas._id }}">{{ kelas.kelas }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}

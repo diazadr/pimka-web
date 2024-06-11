@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <h1 class="mb-4">Pengumuman</h1>
+  <div class="list-group">
+    {% for p in pengumuman %}
+    <div class="list-group-item list-group-item-action mb-3">
+      <h5 class="mb-1">{{ p.judul }}</h5>
+      <p class="mb-1">{{ p.isi }}</p>
+      <small class="text-muted"
+        >Tanggal: {{ p.tanggal.strftime('%Y-%m-%d') }} | Pengirim: {{ p.pengirim
+        }}</small
+      >
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

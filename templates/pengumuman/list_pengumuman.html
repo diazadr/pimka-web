@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-2">
+  <h1 class="mb-4">Daftar Pengumuman</h1>
+  <form method="post" class="mb-3">
+    <div class="form-row">
+      <div class="col-md-6 mb-2">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            name="search"
+            placeholder="Cari Pengumuman" />
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="submit">Cari</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-2">
+        <select id="inputOrder" class="form-control" name="order">
+          <option selected disabled>Pilih Urutan</option>
+          <option value="ascending">Ascending</option>
+          <option value="descending">Descending</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <button class="btn btn-primary btn-block" type="submit">Filter</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Judul</th>
+          <th scope="col">Tanggal</th>
+          <th scope="col">Isi Pengumuman</th>
+          <th scope="col">Pengirim</th>
+          <th scope="col">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pengumuman in pengumuman %}
+        <tr>
+          <td>{{ pengumuman.judul }}</td>
+          <td>{{ pengumuman.tanggal }}</td>
+          <td>{{ pengumuman.isi }}</td>
+          <td>{{ pengumuman.pengirim }}</td>
+          <td>
+            <a
+              href="{{ url_for('edit_pengumuman', id=pengumuman._id) }}"
+              class="btn btn-success btn-sm"
+              >Edit</a
+            >
+            <form
+              action="{{ url_for('delete_pengumuman', id=pengumuman._id) }}"
+              method="post"
+              style="display: inline">
+              <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-2">
+  <h1 class="mb-4">Ubah Pengguna</h1>
+  <form action="/edit_user/{{ user['_id'] }}" method="post">
+    <div class="form-group">
+      <label for="inputUsername">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputUsername"
+        name="username"
+        value="{{ user['username'] }}"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="inputName">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputName"
+        name="name"
+        value="{{ user['name'] }}"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="inputEmail">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="inputEmail"
+        name="email"
+        value="{{ user['email'] }}"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="inputPassword"
+        name="password"
+        placeholder="Enter new password" />
+    </div>
+    <div class="form-group">
+      <label for="inputRole">Role</label>
+      <select class="form-control" id="inputRole" name="role">
+        <option value="user" {% if user['role'] == 'user' %} selected {% endif %}>User</option>
+        <option value="admin" {% if user['role'] == 'admin' %} selected {% endif %}>Admin</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+</div>
+{% endblock %}

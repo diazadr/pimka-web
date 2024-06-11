@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-2">
+  <h1 class="mb-4">Tambah Jadwal Apel</h1>
+  <form method="post">
+    <div class="form-group">
+      <label for="tanggal">Tanggal</label>
+      <input
+        type="date"
+        class="form-control"
+        id="tanggal"
+        name="tanggal"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="kelas_id">Kelas</label>
+      <select class="form-control" id="kelas_id" name="kelas_id" required>
+        {% for kelas in kelas_list %}
+        <option value="{{ kelas._id }}">{{ kelas.kelas }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="shift_id">Shift</label>
+      <select class="form-control" id="shift_id" name="shift_id" required>
+        {% for shift in shift_list %}
+        <option value="{{ shift._id }}">{{ shift.jenis_shift }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}

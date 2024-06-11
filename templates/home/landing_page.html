@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <title>
+      PIMKA | Pusat Informasi dan Manajemen Kegiatan Automation Engineering
+    </title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo"><a href="#">Pimka AE</a></div>
+      <ul class="nav-links">
+        <li class="nav-link">
+          <a href="{{ url_for('login') }}" class="button">Login</a>
+        </li>
+        <li class="nav-link">
+          <a href="{{ url_for('register') }}" class="button button-primary"
+            >Register</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <h1>PIMKA</h1>
+          <p>
+            Selamat datang di Pusat Informasi dan Kegiatan, platform terpadu
+            untuk mengelola informasi dan kegiatan Automation Engineering di
+            Polman Bandung. Temukan semua yang Anda butuhkan dari manajemen
+            pengguna hingga pengumuman terbaru.
+          </p>
+          <button>Pelajari lebih lanjut</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <div class="flash-messages">
+        {% for message in messages %}
+        <div class="flash-message">{{ message }}</div>
+        {% endfor %}
+      </div>
+      {% endif %} {% endwith %}
+      <section class="features-section">
+        <div class="container">
+          <h2 class="section-title">Mulai Manajemen Anda</h2>
+          <p class="section-subtitle">Fitur-fitur utama dalam PIMKA</p>
+          <div class="features-grid">
+            <div class="feature-card">
+              <img src="/static/assets/2.jpg" alt="User Management" />
+              <div class="feature-name">
+                <i class="ri-user-line"></i>
+                <span>User Management</span>
+              </div>
+            </div>
+            <div class="feature-card">
+              <img src="/static/assets/3.jpg" alt="Shift Management" />
+              <div class="feature-name">
+                <i class="ri-calendar-check-line"></i>
+                <span>Shift Management</span>
+              </div>
+            </div>
+            <div class="feature-card">
+              <img src="/static/assets/4.jpg" alt="Kelas" />
+              <div class="feature-name">
+                <i class="ri-book-line"></i>
+                <span>Kelas</span>
+              </div>
+            </div>
+            <div class="feature-card">
+              <img src="/static/assets/5.jpg" alt="Jadwal Apel" />
+              <div class="feature-name">
+                <i class="ri-notification-line"></i>
+                <span>Jadwal Apel</span>
+              </div>
+            </div>
+            <div class="feature-card">
+              <img src="/static/assets/6.jpg" alt="Pengumuman" />
+              <div class="feature-name">
+                <i class="ri-megaphone-line"></i>
+                <span>Pengumuman</span>
+              </div>
+            </div>
+            <div class="feature-card">
+              <img src="/static/assets/7.jpg" alt="Laporan dan Saran" />
+              <div class="feature-name">
+                <i class="ri-feedback-line"></i>
+                <span>Laporan dan Saran</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="banner-section">
+        <div class="container">
+          <div class="banner-content">
+            <h2>Platform Terpadu</h2>
+            <p>
+              PIMKA membantu Anda mengelola berbagai aspek kegiatan dan
+              informasi dengan mudah dan efisien. Dari jadwal kelas hingga
+              pengumuman, semuanya ada dalam satu tempat.
+            </p>
+            <button>Pelajari lebih lanjut</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits-section">
+        <div class="container">
+          <h2 class="section-title">Mengapa Memilih Kami</h2>
+          <p class="section-subtitle">
+            Solusi terbaik untuk manajemen kegiatan Automation Engineering.
+          </p>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <i class="ri-settings-line"></i>
+              <h4>Manajemen Terpadu</h4>
+              <p>Semua kebutuhan manajemen Anda dalam satu platform.</p>
+            </div>
+            <div class="benefit-card">
+              <img src="/static/assets/8.jpg" alt="Easy to Use" />
+            </div>
+            <div class="benefit-card">
+              <img src="/static/assets/9.jpg" alt="Efficient" />
+            </div>
+            <div class="benefit-card">
+              <i class="ri-time-line"></i>
+              <h4>Efisien</h4>
+              <p>Hemat waktu dan tenaga dengan sistem yang mudah digunakan.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <h4>PIMKA</h4>
+        <div class="social-icons">
+          <span><i class="ri-facebook-fill"></i></span>
+          <span><i class="ri-twitter-fill"></i></span>
+          <span><i class="ri-instagram-line"></i></span>
+          <span><i class="ri-linkedin-fill"></i></span>
+        </div>
+        <p>
+          Membangun masa depan Automation Engineering dengan informasi dan
+          manajemen yang terintegrasi.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

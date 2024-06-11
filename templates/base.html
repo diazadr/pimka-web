@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/static/dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h3>Menu</h3>
+        </div>
+        <ul>
+          {% if session['role'] == 'admin' %}
+          <li>
+            <a
+              href="#"
+              data-toggle="collapse"
+              data-target="#usersDropdown"
+              aria-expanded="false"
+              aria-controls="usersDropdown">
+              <i class="fas fa-users"></i> Pengguna
+              <i class="fas fa-caret-down"></i>
+            </a>
+            <ul class="collapse" id="usersDropdown">
+              <li>
+                <a href="{{ url_for('list_user') }}"
+                  ><i class="far fa-eye"></i> Lihat Pengguna</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('form_user') }}"
+                  ><i class="fas fa-user-plus"></i> Tambah Pengguna</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <hr />
+            <a
+              href="#"
+              data-toggle="collapse"
+              data-target="#kelasDropdown"
+              aria-expanded="false"
+              aria-controls="kelasDropdown">
+              <i class="fas fa-chalkboard-teacher"></i> Kelas
+              <i class="fas fa-caret-down"></i>
+            </a>
+            <ul class="collapse" id="kelasDropdown">
+              <li>
+                <a href="{{ url_for('list_kelas') }}"
+                  ><i class="far fa-eye"></i> Lihat Kelas</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('form_kelas') }}"
+                  ><i class="fas fa-plus-circle"></i> Tambah Kelas</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <hr />
+            <a
+              href="#"
+              data-toggle="collapse"
+              data-target="#programStudiDropdown"
+              aria-expanded="false"
+              aria-controls="programStudiDropdown">
+              <i class="fas fa-book"></i> Program Studi
+              <i class="fas fa-caret-down"></i>
+            </a>
+            <ul class="collapse" id="programStudiDropdown">
+              <li>
+                <a href="{{ url_for('list_program_studi') }}"
+                  ><i class="far fa-eye"></i> Lihat Program Studi</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('form_program_studi') }}"
+                  ><i class="fas fa-plus-circle"></i> Tambah Program Studi</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <hr />
+            <a
+              href="#"
+              data-toggle="collapse"
+              data-target="#shiftDropdown"
+              aria-expanded="false"
+              aria-controls="shiftDropdown">
+              <i class="fas fa-clock"></i> Shift
+              <i class="fas fa-caret-down"></i>
+            </a>
+            <ul class="collapse" id="shiftDropdown">
+              <li>
+                <a href="{{ url_for('list_shift') }}"
+                  ><i class="far fa-eye"></i> Lihat Shift</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('form_shift') }}"
+                  ><i class="fas fa-plus-circle"></i> Tambah Shift</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <hr />
+            <a
+              href="#"
+              data-toggle="collapse"
+              data-target="#apelDropdown"
+              aria-expanded="false"
+              aria-controls="apelDropdown">
+              <i class="far fa-calendar-alt"></i> Jadwal Apel
+              <i class="fas fa-caret-down"></i>
+            </a>
+            <ul class="collapse" id="apelDropdown">
+              <li>
+                <a href="{{ url_for('list_apel') }}"
+                  ><i class="far fa-eye"></i> Lihat Jadwal Apel</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('form_apel') }}"
+                  ><i class="fas fa-plus-circle"></i> Tambah Jadwal Apel</a
+                >
+              </li>
+            </ul>
+          </li>
+  
+          <li>
+            <hr />
+            <a
+              href="#"
+              data-toggle="collapse"
+              data-target="#pengumumanDropdown"
+              aria-expanded="false"
+              aria-controls="pengumumanDropdown">
+              <i class="fas fa-bullhorn"></i> Pengumuman
+              <i class="fas fa-caret-down"></i>
+            </a>
+            <ul class="collapse" id="pengumumanDropdown">
+              <li>
+                <a href="{{ url_for('list_pengumuman') }}"
+                  ><i class="far fa-eye"></i> Lihat Pengumuman</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('form_pengumuman') }}"
+                  ><i class="fas fa-plus-circle"></i> Tambah Pengumuman</a
+                >
+              </li>
+            </ul>
+          </li>
+          {% endif %}
+          <li>
+            <hr />
+            <a
+              href="#"
+              data-toggle="collapse"
+              data-target="#laporanDropdown"
+              aria-expanded="false"
+              aria-controls="laporanDropdown">
+              <i class="fas fa-file-alt"></i> Laporan dan Saran
+              <i class="fas fa-caret-down"></i>
+            </a>
+            <ul class="collapse" id="laporanDropdown">
+              <li>
+                <a href="{{ url_for('list_laporan_saran') }}"
+                  ><i class="far fa-eye"></i> Lihat Laporan dan Saran</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('form_laporan_saran') }}"
+                  ><i class="fas fa-plus-circle"></i> Tambah Laporan dan Saran</a
+                >
+              </li>
+            </ul>
+          </li>
+       
+          <li>
+            <a href="{{ url_for('pengumuman_user') }}"
+              ><i class="far fa-eye"></i> Pengumuman</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('shift_apel_user') }}"
+              ><i class="far fa-eye"></i> Shift dan Jadwal Apel</a
+            >
+          </li>
+        </ul>
+      </aside>
+      <div class="main-section">
+        <nav class="navbar">
+          <ul class="navbar-links">
+            <li>
+              <a href="{{ url_for('profile', username=session['username']) }}"></i> Profile</a>
+            </li>
+            <li>
+              <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </li>
+          </ul>
+        </nav>
+        <main class="main-content">
+          {% with messages = get_flashed_messages(with_categories=true) %} {% if
+          messages %} {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock
+          %}
+        </main>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

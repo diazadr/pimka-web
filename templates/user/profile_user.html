@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-2">
+  <h1 class="mb-4">Profil Pengguna</h1>
+  <form action="{{ url_for('profile', username=user.username) }}" method="POST">
+    <div class="form-group">
+      <label for="inputUsername">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputUsername"
+        name="username"
+        value="{{ user.username }}"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="inputName">Nama</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputName"
+        name="name"
+        value="{{ user.name }}"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="inputEmail">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="inputEmail"
+        name="email"
+        value="{{ user.email }}"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="inputPassword"
+        name="password" />
+    </div>
+    <button type="submit" class="btn btn-primary">Perbarui Profil</button>
+  </form>
+</div>
+{% endblock %}
