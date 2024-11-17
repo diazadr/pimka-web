@@ -64,7 +64,9 @@ The PIMKA project is a web-based platform for managing information and activitie
 ![User Pengumuman Screenshot](https://github.com/user-attachments/assets/97f47d19-e15d-4bcb-8f08-28cec6ac7d06)
 
 ---
+![Screenshot 2024-11-17 211048](https://github.com/user-attachments/assets/9e858ff2-f1be-4043-a588-0ed1553425fe)
 
+---
 
 ## Installation and Setup
 
